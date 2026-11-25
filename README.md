@@ -1,23 +1,69 @@
-# 3D Photo Gallery
+# 🖼️ 3D Photo Gallery
 
-A virtual 3D photo gallery — a museum-style hall you can walk through, with your own photos hanging in golden frames on the walls.
+> A virtual 3D photo gallery — walk through a museum-style hall and hang **your own photos** in golden frames on the walls.
 
-## Features
+---
 
-- 3D hall with 16 wall frames, spotlights, benches and plants
-- Upload your own photos (JPG / PNG / WebP / GIF, up to 10 MB, several at once) — they appear framed on the wall with a caption plate
-- Drag to look around; tap a photo or use the Previous / Next buttons to fly the camera to it
-- Auto-tour mode that slowly pans through the hall
-- Manage panel to edit captions or remove photos
-- Uploaded photos are saved, so they stay in the gallery between visits
+## ✨ About
 
-## Tech
+**3D Photo Gallery** is a browser-based 3D room built with Three.js. The hall has deep-green walls, a wooden floor, spotlights, benches and plants — and **16 picture frames** waiting for your photos. Upload any photo and it appears on the wall inside a brass frame, with its own caption plate underneath. Your photos are saved, so the gallery looks the same every time you come back.
 
-- Three.js for the 3D scene, React + TypeScript client
-- Bun server with actions for photo storage (blob storage + SQLite via Drizzle)
+## 🚀 Features
 
-## Structure
+- 🏛️ **Virtual museum hall** — 16 wall frames, spotlights, benches, a rug and plants
+- 📸 **Upload your photos** — JPG / PNG / WebP / GIF, up to 10 MB each, several at once
+- 🖼️ **Instant framing** — uploaded photos appear on the wall with a caption plate
+- 🎥 **Camera fly-to** — tap a photo, or use the **Previous / Next** buttons, and the camera glides to it
+- 🖱️ **Look around freely** — drag to explore the hall on desktop or phone
+- 🔄 **Auto tour** — sit back while the hall slowly tours itself
+- ✏️ **Captions & manage panel** — edit a photo's caption or remove it anytime
+- 💾 **Saved storage** — photos persist in the gallery's own storage between visits
 
-- `client/` — the web client (3D scene in `client/src/GalleryScene.ts`)
-- `server/` — server actions and database schema
-- `drizzle/` — database migrations
+## 🎮 How to Use
+
+1. Open the gallery — it starts as an empty hall.
+2. Tap **"Photo upload karo"** and pick your photos.
+3. Each photo lands in a frame on the wall, in order.
+4. Drag to look around, tap any photo to fly up close to it.
+5. Use **Photos manage karo** to change captions or delete a photo.
+6. Turn on **Auto tour** for a hands-free walkthrough.
+
+## 🛠️ Tech Stack
+
+| Part | Technology |
+| --- | --- |
+| 3D scene | Three.js |
+| Client | React + TypeScript |
+| Server | Bun (server actions) |
+| Database | SQLite via Drizzle ORM |
+| Photo storage | Blob storage |
+
+## 📁 Project Structure
+
+```text
+3dgallery/
+├── client/
+│   ├── index.html
+│   ├── build.mjs
+│   └── src/
+│       ├── App.tsx           # Gallery UI (upload, manage, tour controls)
+│       ├── GalleryScene.ts   # The 3D hall — room, frames, lights, camera
+│       ├── api.ts            # Client calls to server actions
+│       ├── main.tsx
+│       └── theme.css
+├── server/
+│   └── src/
+│       ├── actions.ts        # addPhoto / updateCaption / deletePhoto actions
+│       └── schema.ts         # Photos table schema
+├── drizzle/                  # Database migrations
+├── package.json
+└── README.md
+```
+
+## 📝 Note
+
+The gallery runs as an interactive web app: the 3D hall and photo uploads work inside the app, and uploaded photos live in the app's own storage — this repository holds the complete source code of the project.
+
+---
+
+⭐ *Made for everyone who wants their memories on a wall — a whole hall of them.*
