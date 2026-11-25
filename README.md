@@ -38,28 +38,6 @@
 | Database | SQLite via Drizzle ORM |
 | Photo storage | Blob storage |
 
-## 📁 Project Structure
-
-```text
-3dgallery/
-├── client/
-│   ├── index.html
-│   ├── build.mjs
-│   └── src/
-│       ├── App.tsx           # Gallery UI (upload, manage, tour controls)
-│       ├── GalleryScene.ts   # The 3D hall — room, frames, lights, camera
-│       ├── api.ts            # Client calls to server actions
-│       ├── main.tsx
-│       └── theme.css
-├── server/
-│   └── src/
-│       ├── actions.ts        # addPhoto / updateCaption / deletePhoto actions
-│       └── schema.ts         # Photos table schema
-├── drizzle/                  # Database migrations
-├── package.json
-└── README.md
-```
-
 ## 📝 Note
 
 The gallery runs as an interactive web app: the 3D hall and photo uploads work inside the app, and uploaded photos live in the app's own storage — this repository holds the complete source code of the project.
